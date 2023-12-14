@@ -51,12 +51,13 @@ namespace Presentacion
                 if (response == DialogResult.Yes)
                 {
                     productBusiness.delete(product);
+                    MessageBox.Show("Producto eliminado con exito!");
                 }
-                MessageBox.Show("Eliminado con exito!");
+
                 Close();
             }
             catch (Exception ex)
-            {
+            {   
                 throw ex;
             }
         }

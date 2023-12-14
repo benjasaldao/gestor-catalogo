@@ -70,6 +70,19 @@ namespace Presentacion
             load();
         }
 
+        private void btnCategories_Click(object sender, EventArgs e)
+        {
+            frmCategories categoriesForm = new frmCategories();
+            categoriesForm.ShowDialog();
+        }
+
+        private void btnBrands_Click(object sender, EventArgs e)
+        {
+            frmBrands brandsForms = new frmBrands();
+            brandsForms.ShowDialog();
+        }
+
+
         // Functions
         private void load()
         {
@@ -106,5 +119,6 @@ namespace Presentacion
                 pboProduct.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
             }
         }
+
     }
 }
