@@ -43,10 +43,10 @@
             this.lblDescriptionContainer = new System.Windows.Forms.Label();
             this.lblBrandContainer = new System.Windows.Forms.Label();
             this.lblCategoryContainer = new System.Windows.Forms.Label();
-            this.lblUrlImageContainer = new System.Windows.Forms.Label();
             this.lblPriceContainer = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.txtUrlImage = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pboProductImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +83,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblName.Location = new System.Drawing.Point(65, 78);
+            this.lblName.Location = new System.Drawing.Point(78, 78);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(66, 17);
             this.lblName.TabIndex = 3;
@@ -93,7 +93,7 @@
             // 
             this.lblCode.AutoSize = true;
             this.lblCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblCode.Location = new System.Drawing.Point(72, 116);
+            this.lblCode.Location = new System.Drawing.Point(86, 116);
             this.lblCode.Name = "lblCode";
             this.lblCode.Size = new System.Drawing.Size(56, 17);
             this.lblCode.TabIndex = 4;
@@ -103,7 +103,7 @@
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblDescription.Location = new System.Drawing.Point(49, 154);
+            this.lblDescription.Location = new System.Drawing.Point(58, 154);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(86, 17);
             this.lblDescription.TabIndex = 5;
@@ -113,7 +113,7 @@
             // 
             this.lblBrand.AutoSize = true;
             this.lblBrand.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblBrand.Location = new System.Drawing.Point(75, 192);
+            this.lblBrand.Location = new System.Drawing.Point(89, 192);
             this.lblBrand.Name = "lblBrand";
             this.lblBrand.Size = new System.Drawing.Size(51, 17);
             this.lblBrand.TabIndex = 6;
@@ -123,7 +123,7 @@
             // 
             this.lblCategory.AutoSize = true;
             this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblCategory.Location = new System.Drawing.Point(60, 230);
+            this.lblCategory.Location = new System.Drawing.Point(69, 230);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(73, 17);
             this.lblCategory.TabIndex = 7;
@@ -133,7 +133,7 @@
             // 
             this.lblUrlImage.AutoSize = true;
             this.lblUrlImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblUrlImage.Location = new System.Drawing.Point(29, 268);
+            this.lblUrlImage.Location = new System.Drawing.Point(25, 268);
             this.lblUrlImage.Name = "lblUrlImage";
             this.lblUrlImage.Size = new System.Drawing.Size(115, 17);
             this.lblUrlImage.TabIndex = 8;
@@ -143,7 +143,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblPrice.Location = new System.Drawing.Point(72, 306);
+            this.lblPrice.Location = new System.Drawing.Point(86, 332);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(52, 17);
             this.lblPrice.TabIndex = 9;
@@ -152,7 +152,7 @@
             // lblNameContainer
             // 
             this.lblNameContainer.AutoSize = true;
-            this.lblNameContainer.Location = new System.Drawing.Point(174, 78);
+            this.lblNameContainer.Location = new System.Drawing.Point(148, 80);
             this.lblNameContainer.Name = "lblNameContainer";
             this.lblNameContainer.Size = new System.Drawing.Size(0, 13);
             this.lblNameContainer.TabIndex = 10;
@@ -160,7 +160,7 @@
             // lblCodeContainer
             // 
             this.lblCodeContainer.AutoSize = true;
-            this.lblCodeContainer.Location = new System.Drawing.Point(174, 120);
+            this.lblCodeContainer.Location = new System.Drawing.Point(148, 122);
             this.lblCodeContainer.Name = "lblCodeContainer";
             this.lblCodeContainer.Size = new System.Drawing.Size(0, 13);
             this.lblCodeContainer.TabIndex = 11;
@@ -168,7 +168,7 @@
             // lblDescriptionContainer
             // 
             this.lblDescriptionContainer.AutoSize = true;
-            this.lblDescriptionContainer.Location = new System.Drawing.Point(174, 158);
+            this.lblDescriptionContainer.Location = new System.Drawing.Point(148, 160);
             this.lblDescriptionContainer.Name = "lblDescriptionContainer";
             this.lblDescriptionContainer.Size = new System.Drawing.Size(0, 13);
             this.lblDescriptionContainer.TabIndex = 12;
@@ -176,7 +176,7 @@
             // lblBrandContainer
             // 
             this.lblBrandContainer.AutoSize = true;
-            this.lblBrandContainer.Location = new System.Drawing.Point(174, 194);
+            this.lblBrandContainer.Location = new System.Drawing.Point(148, 196);
             this.lblBrandContainer.Name = "lblBrandContainer";
             this.lblBrandContainer.Size = new System.Drawing.Size(0, 13);
             this.lblBrandContainer.TabIndex = 13;
@@ -184,24 +184,15 @@
             // lblCategoryContainer
             // 
             this.lblCategoryContainer.AutoSize = true;
-            this.lblCategoryContainer.Location = new System.Drawing.Point(174, 232);
+            this.lblCategoryContainer.Location = new System.Drawing.Point(148, 234);
             this.lblCategoryContainer.Name = "lblCategoryContainer";
             this.lblCategoryContainer.Size = new System.Drawing.Size(0, 13);
             this.lblCategoryContainer.TabIndex = 14;
             // 
-            // lblUrlImageContainer
-            // 
-            this.lblUrlImageContainer.AutoSize = true;
-            this.lblUrlImageContainer.Location = new System.Drawing.Point(174, 272);
-            this.lblUrlImageContainer.MaximumSize = new System.Drawing.Size(115, 17);
-            this.lblUrlImageContainer.Name = "lblUrlImageContainer";
-            this.lblUrlImageContainer.Size = new System.Drawing.Size(0, 13);
-            this.lblUrlImageContainer.TabIndex = 15;
-            // 
             // lblPriceContainer
             // 
             this.lblPriceContainer.AutoSize = true;
-            this.lblPriceContainer.Location = new System.Drawing.Point(174, 310);
+            this.lblPriceContainer.Location = new System.Drawing.Point(142, 336);
             this.lblPriceContainer.Name = "lblPriceContainer";
             this.lblPriceContainer.Size = new System.Drawing.Size(0, 13);
             this.lblPriceContainer.TabIndex = 16;
@@ -226,16 +217,27 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // txtUrlImage
+            // 
+            this.txtUrlImage.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtUrlImage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUrlImage.Enabled = false;
+            this.txtUrlImage.Location = new System.Drawing.Point(146, 268);
+            this.txtUrlImage.Multiline = true;
+            this.txtUrlImage.Name = "txtUrlImage";
+            this.txtUrlImage.Size = new System.Drawing.Size(176, 53);
+            this.txtUrlImage.TabIndex = 19;
+            // 
             // frmProductDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(684, 450);
+            this.Controls.Add(this.txtUrlImage);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPriceContainer);
-            this.Controls.Add(this.lblUrlImageContainer);
             this.Controls.Add(this.lblCategoryContainer);
             this.Controls.Add(this.lblBrandContainer);
             this.Controls.Add(this.lblDescriptionContainer);
@@ -277,9 +279,9 @@
         private System.Windows.Forms.Label lblDescriptionContainer;
         private System.Windows.Forms.Label lblBrandContainer;
         private System.Windows.Forms.Label lblCategoryContainer;
-        private System.Windows.Forms.Label lblUrlImageContainer;
         private System.Windows.Forms.Label lblPriceContainer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.TextBox txtUrlImage;
     }
 }

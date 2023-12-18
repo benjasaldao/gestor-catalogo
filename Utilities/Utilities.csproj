@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5A90C32B-9BD7-4D9A-9C21-FAD028DAD480}</ProjectGuid>
+    <ProjectGuid>{E0AD3A67-743B-4A1A-83C0-F09E273C784A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Negocio</RootNamespace>
-    <AssemblyName>Negocio</AssemblyName>
+    <RootNamespace>Utilities</RootNamespace>
+    <AssemblyName>Utilities</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -42,21 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BrandBusiness.cs" />
-    <Compile Include="CategoryBusiness.cs" />
-    <Compile Include="DataAccess.cs" />
-    <Compile Include="ProductBusiness.cs" />
+    <Compile Include="BusinessUtilities.cs" />
+    <Compile Include="PresentationUtilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Dominio\Domain.csproj">
-      <Project>{c7a31447-b526-441e-94cb-46d66d7d499a}</Project>
-      <Name>Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Utilities\Utilities.csproj">
-      <Project>{e0ad3a67-743b-4a1a-83c0-f09e273c784a}</Project>
-      <Name>Utilities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

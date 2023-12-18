@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class frmCategories
+    partial class frmCategoriesList
     {
         /// <summary>
         /// Required designer variable.
@@ -138,7 +138,7 @@
             // 
             this.txtFilter.Location = new System.Drawing.Point(48, 49);
             this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(120, 20);
+            this.txtFilter.Size = new System.Drawing.Size(164, 20);
             this.txtFilter.TabIndex = 7;
             this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 

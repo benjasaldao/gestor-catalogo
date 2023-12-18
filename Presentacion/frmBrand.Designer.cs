@@ -38,7 +38,7 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(201, 131);
+            this.lblDescription.Location = new System.Drawing.Point(88, 131);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(66, 13);
             this.lblDescription.TabIndex = 9;
@@ -46,28 +46,30 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(286, 128);
+            this.txtDescription.Location = new System.Drawing.Point(173, 128);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(169, 20);
             this.txtDescription.TabIndex = 8;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(396, 210);
+            this.btnClose.Location = new System.Drawing.Point(283, 210);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "Cancelar";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnAddBrand
             // 
-            this.btnAddBrand.Location = new System.Drawing.Point(185, 210);
+            this.btnAddBrand.Location = new System.Drawing.Point(72, 210);
             this.btnAddBrand.Name = "btnAddBrand";
             this.btnAddBrand.Size = new System.Drawing.Size(75, 23);
             this.btnAddBrand.TabIndex = 6;
             this.btnAddBrand.Text = "Añadir";
             this.btnAddBrand.UseVisualStyleBackColor = true;
+            this.btnAddBrand.Click += new System.EventHandler(this.btnAddBrand_Click);
             // 
             // lblTitle
             // 
@@ -83,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 284);
+            this.ClientSize = new System.Drawing.Size(430, 359);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.btnClose);

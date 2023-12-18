@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmCatalog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmCatalog.Designer.cs">
+      <DependentUpon>frmCatalog.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBrand.cs">
       <SubType>Form</SubType>
@@ -58,17 +59,17 @@
     <Compile Include="frmBrand.Designer.cs">
       <DependentUpon>frmBrand.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBrands.cs">
+    <Compile Include="frmBrandsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBrands.Designer.cs">
-      <DependentUpon>frmBrands.cs</DependentUpon>
+    <Compile Include="frmBrandsList.Designer.cs">
+      <DependentUpon>frmBrandsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCategories.cs">
+    <Compile Include="frmCategoriesList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCategories.Designer.cs">
-      <DependentUpon>frmCategories.cs</DependentUpon>
+    <Compile Include="frmCategoriesList.Designer.cs">
+      <DependentUpon>frmCategoriesList.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCategory.cs">
       <SubType>Form</SubType>
@@ -90,17 +91,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmCatalog.resx">
+      <DependentUpon>frmCatalog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBrand.resx">
       <DependentUpon>frmBrand.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBrands.resx">
-      <DependentUpon>frmBrands.cs</DependentUpon>
+    <EmbeddedResource Include="frmBrandsList.resx">
+      <DependentUpon>frmBrandsList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCategories.resx">
-      <DependentUpon>frmCategories.cs</DependentUpon>
+    <EmbeddedResource Include="frmCategoriesList.resx">
+      <DependentUpon>frmCategoriesList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCategory.resx">
       <DependentUpon>frmCategory.cs</DependentUpon>
@@ -142,6 +143,13 @@
       <Project>{5a90c32b-9bd7-4d9a-9c21-fad028dad480}</Project>
       <Name>Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{e0ad3a67-743b-4a1a-83c0-f09e273c784a}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

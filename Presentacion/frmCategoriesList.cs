@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class frmCategories : Form
+    public partial class frmCategoriesList : Form
     {
         private List<Category> categoriesList;
 
-        public frmCategories()
+        public frmCategoriesList()
         {
             InitializeComponent();
         }
@@ -32,7 +32,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Hubo un error al intentar listar las categorias");
             }
 
             dgvCategories.DataSource = categoriesList;
@@ -99,7 +99,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Hubo un error al intentar borrar la categoria seleccionada");
             }
         }
     }

@@ -47,7 +47,7 @@
             // 
             // btnAddCategory
             // 
-            this.btnAddCategory.Location = new System.Drawing.Point(186, 214);
+            this.btnAddCategory.Location = new System.Drawing.Point(72, 214);
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.Size = new System.Drawing.Size(75, 23);
             this.btnAddCategory.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(397, 214);
+            this.btnClose.Location = new System.Drawing.Point(283, 214);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(287, 132);
+            this.txtDescription.Location = new System.Drawing.Point(173, 132);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(169, 20);
             this.txtDescription.TabIndex = 3;
@@ -75,7 +75,7 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(202, 135);
+            this.lblDescription.Location = new System.Drawing.Point(88, 135);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(66, 13);
             this.lblDescription.TabIndex = 4;
@@ -86,7 +86,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(658, 284);
+            this.ClientSize = new System.Drawing.Size(430, 359);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.btnClose);

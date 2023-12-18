@@ -1,20 +1,15 @@
-﻿using Domain;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 using Business;
+using Domain;
+using Utilities;
 
 namespace Presentacion
 {
     public partial class frmProducts : Form
     {
         private Product product = null;
+        private OpenFileDialog file = null;
 
         public frmProducts()
         {
@@ -55,33 +50,21 @@ namespace Presentacion
                     txtName.Text = product.name;
                     txtDescription.Text = product.description;
                     txtImageUrl.Text = product.imageUrl;
-                    loadImage(product.imageUrl);
+                    PresentationUtilities.loadImage(product.imageUrl, pboProductPreview);
                     txtPrice.Text = product.price.ToString();
                     cboBrand.SelectedIndex = product.brand.id - 1;
                     cboCategory.SelectedIndex = product.category.id - 1;
                 }
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        private void loadImage(string imageUrl)
-        {
-            try
-            {
-                pboProductPreview.Load(imageUrl);
-            }
             catch (Exception)
             {
-                pboProductPreview.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+                MessageBox.Show("Hubo un error al intentar cargar las marcas y/o categorias para los desplegables");
             }
         }
 
         private void txtImageUrl_Leave(object sender, EventArgs e)
         {
-            loadImage(txtImageUrl.Text);
+            PresentationUtilities.loadImage(txtImageUrl.Text, pboProductPreview);
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
@@ -90,6 +73,11 @@ namespace Presentacion
 
             try
             {
+                if (validateFields())
+                {
+                    return;
+                }
+
                 if (product == null)
                 {
                     product = new Product();
@@ -104,6 +92,7 @@ namespace Presentacion
 
                 if (product.id != 0)
                 {
+                    PresentationUtilities.loadImage("", pboProductPreview);
                     productBusiness.update(product);
                     MessageBox.Show("Producto modificado con exito");
                 } else
@@ -114,11 +103,47 @@ namespace Presentacion
 
                 Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Hubo un error al intentar guardar el producto");
             }
 
+        }
+
+        private void btnAddImage_Click(object sender, EventArgs e)
+        {
+            file = new OpenFileDialog();
+            file.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                txtImageUrl.Text = file.FileName;
+                PresentationUtilities.loadImage(file.FileName, pboProductPreview);
+            }
+        } 
+
+        private bool validateFields()
+        {
+            bool isOneEmpty = txtCode.Text == "" || txtDescription.Text == "" || txtImageUrl.Text == "" || txtName.Text == "" || txtPrice.Text == "";
+
+            if(isOneEmpty)
+            {
+                MessageBox.Show("Debes completar todos los campos");
+                return true;
+            }
+
+            if(!PresentationUtilities.onlyNumbers(txtPrice.Text))
+            {
+                MessageBox.Show("Solo se pueden ingresar numeros en el precio");
+                return true;
+            }
+
+            if(!PresentationUtilities.isProductCode(txtCode.Text))
+            {
+                MessageBox.Show("El codigo ingresado es invalido");
+                return true;
+            }
+
+            return false;
         }
     }
 }

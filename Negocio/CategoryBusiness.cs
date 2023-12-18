@@ -46,6 +46,27 @@ namespace Business
             }
         }
 
+        public Category searchByDescription(string description)
+        {
+            Category category = new Category();
+            try
+            {
+                data.setQuery("Select Id, Descripcion from CATEGORIAS where Descripcion = @description");
+                data.setParam("@description", description);
+                data.executeRead();
+
+                data.Reader.Read();
+                category.id = (int)data.Reader["Id"];
+                category.description = (string)data.Reader["Descripcion"];
+
+                return category;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void add(Category category)
         {
             try

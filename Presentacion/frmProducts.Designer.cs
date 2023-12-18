@@ -138,6 +138,7 @@
             // txtCode
             // 
             this.txtCode.Location = new System.Drawing.Point(128, 73);
+            this.txtCode.MaxLength = 3;
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(121, 20);
             this.txtCode.TabIndex = 0;
@@ -151,6 +152,7 @@
             // 
             // cboBrand
             // 
+            this.cboBrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboBrand.FormattingEnabled = true;
             this.cboBrand.Location = new System.Drawing.Point(128, 151);
             this.cboBrand.Name = "cboBrand";
@@ -159,6 +161,7 @@
             // 
             // cboCategory
             // 
+            this.cboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Location = new System.Drawing.Point(128, 178);
             this.cboCategory.Name = "cboCategory";
@@ -182,6 +185,7 @@
             this.btnAddImage.TabIndex = 6;
             this.btnAddImage.Text = "+";
             this.btnAddImage.UseVisualStyleBackColor = true;
+            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
             // 
             // btnAddProduct
             // 

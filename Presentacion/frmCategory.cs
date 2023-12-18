@@ -36,6 +36,11 @@ namespace Presentacion
 
             try
             {
+                if(validateFields())
+                {
+                    return;
+                }
+
                 if (category == null)
                 {
                     category = new Category();
@@ -55,9 +60,9 @@ namespace Presentacion
 
                 Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Hubo un error al intentar guardar la categoria!");
             }
 
         }
@@ -73,6 +78,16 @@ namespace Presentacion
             {
                 txtDescription.Text = category.description;
             }
+        }
+
+        private bool validateFields()
+        {
+            if (string.IsNullOrEmpty(txtDescription.Text))
+            {
+                MessageBox.Show("El campo no puede estar vacio!");
+                return true;
+            } 
+            return false;
         }
     }
 }

@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class frmBrands : Form
+    public partial class frmBrandsList : Form
     {
         private List<Brand> brandsList;
 
-        public frmBrands()
+        public frmBrandsList()
         {
             InitializeComponent();
         }
@@ -30,9 +30,9 @@ namespace Presentacion
             {
                 brandsList = brandBusiness.list();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Hubo un error al listar las marcas");
             }
 
             dgvBrands.DataSource = brandsList;
@@ -100,7 +100,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("No se pudo borrar la marca seleccionada!");
             }
         }
     }

@@ -1,14 +1,8 @@
 ﻿using Business;
 using Domain;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utilities;
 
 namespace Presentacion
 {
@@ -29,10 +23,10 @@ namespace Presentacion
             lblDescriptionContainer.Text = product.description;
             lblBrandContainer.Text = product.brand.description;
             lblCategoryContainer.Text = product.category.description;
-            lblUrlImageContainer.Text = product.imageUrl;
+            txtUrlImage.Text = product.imageUrl;
             lblPriceContainer.Text = product.price.ToString();
 
-            loadImage(product.imageUrl);
+            PresentationUtilities.loadImage(product.imageUrl, pboProductImage);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -50,35 +44,24 @@ namespace Presentacion
 
                 if (response == DialogResult.Yes)
                 {
+                    PresentationUtilities.loadImage("", pboProductImage);
                     productBusiness.delete(product);
                     MessageBox.Show("Producto eliminado con exito!");
+                    Close();
                 }
-
-                Close();
             }
-            catch (Exception ex)
-            {   
-                throw ex;
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un error al intentar borrar el producto!");
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             frmProducts productForm = new frmProducts(product);
+            PresentationUtilities.loadImage("", pboProductImage);
             productForm.ShowDialog();
+            PresentationUtilities.loadImage(product.imageUrl, pboProductImage);
         }
-
-        private void loadImage(string imageUrl)
-        {
-            try
-            {
-                pboProductImage.Load(imageUrl);
-            }
-            catch (Exception)
-            {
-                pboProductImage.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
-            }
-        }
-
     }
 }

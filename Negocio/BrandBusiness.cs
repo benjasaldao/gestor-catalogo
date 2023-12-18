@@ -46,6 +46,27 @@ namespace Business
             }
         }
 
+        public Brand searchByDescription(string description)
+        {
+            Brand brand = new Brand();
+            try
+            {
+                data.setQuery("Select Id, Descripcion from MARCAS where Descripcion = @description");
+                data.setParam("@description", description);
+                data.executeRead();
+
+                data.Reader.Read();
+                brand.id = (int)data.Reader["Id"];
+                brand.description = (string)data.Reader["Descripcion"];
+
+                return brand;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void add(Brand brand)
         {
             try
